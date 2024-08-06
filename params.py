@@ -56,8 +56,8 @@ class Setup:
 
             self.T = 300 # in K
             self.gamma = 1e-10 # in Hz
-            self.Vtheta = 1e-10 # in J
-            self.Vphi = 1e-10 # in J
+            self.Vtheta = 7e-9 # in J
+            self.Vphi = 7e-9 # in J
 
             self.jn = 1.
 

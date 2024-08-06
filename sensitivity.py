@@ -19,27 +19,27 @@ xlim1 = 1
 xlim2 = 3000
 ylim1 = 1e-32
 ylim2 = 1e-24
-legend = 'upper left'
+legend = None
 xtxt = 2.5
 ytxt = 2.5e-32
 
 ##default = 'future'
 ##xlim1 = 1e-3
 ##xlim2 = 1000
-##ylim1 = 1e-50
+##ylim1 = 1e-49
 ##ylim2 = 1e-28
 ##legend = 'upper left'
 ##xtxt = 4e-3
-##ytxt = 1.5e-49
+##ytxt = 1.3e-48
 
 ##default = 'freefall'
 ##xlim1 = 1e-5
 ##xlim2 = 10
-##ylim1 = 1e-50
+##ylim1 = 1e-49
 ##ylim2 = 1e-28
-##legend = 'upper left'
-##xtxt = 2.5
-##ytxt = 1.5e-49
+##legend = None
+##xtxt = 4.5e-5
+##ytxt = 1.3e-48
 
 ax.set_xlim(xlim1, xlim2)
 ax.set_ylim(ylim1, ylim2)
