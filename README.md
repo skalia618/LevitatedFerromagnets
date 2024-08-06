@@ -1,6 +1,6 @@
 # Levitated Ferromagnets
 
-This repository contains all the code used to generate the plots in arXiv:24XX.XXXXX.  If you have any questions, please contact the author: Saarik Kalia (kalias@umn.edu)
+This repository contains all the code used to generate the plots in arXiv:24XX.XXXXX.  If you have any questions, please contact Saarik Kalia (kalias@umn.edu).
 
 The files in this repository generate the following figures.
 - axelectron_projection.py: Top left plot of Fig. 6
