@@ -60,7 +60,7 @@ ax.text(1.4e-17, 1.4e-8, 'Torsion', ha = 'center', va = 'center')
 comag = np.loadtxt('axelectron_constraints/comag_lee.txt').T
 ax.fill_between(1e-15 * comag[0], 0.384 * comag[1], 1, color = '0.81', zorder = 1)
 ax.plot(1e-15 * comag[0], 0.384 * comag[1], color = '0.66', zorder = 1)
-ax.text(1.5e-15, 1e-8, r'Comagnetometers', ha = 'center', va = 'center')
+ax.text(1.3e-15, 8e-9, r'Comagnetometers', ha = 'center', va = 'center')
 
 colors = [(0.317647, 0.654902, 0.752941), (1., 0.721569, 0.219608), (0.921569, 0.494118, 0.431373)]
 BDM = 2 * np.sqrt(hbar * c) / ge / qe * vDM / c ** 2 * np.sqrt(2 * rhoDM)
