@@ -31,7 +31,7 @@ freefall = Setup(default = 'freefall')
 
 xlim1 = 2 * np.pi * Hz_to_eV * 1e-3
 xlim2 = 2 * np.pi * Hz_to_eV * 1e3
-ylim1 = 6e-18
+ylim1 = 1e-14
 ylim2 = 3e2
 ax.set_xlim(xlim1, xlim2)
 ax.set_ylim(ylim1, ylim2)
@@ -42,11 +42,11 @@ ax.set_ylabel(r'$g_{a\gamma}\,[\mathrm{GeV}^{-1}]$')
 ax.yaxis.set_major_formatter(CustomTicker())
 
 ax.tick_params(which = 'both', direction = 'in')
-secxax = ax.secondary_xaxis('top', functions = (lambda x: x / (2 * np.pi * Hz_to_eV), lambda x: 2 * np.pi * Hz_to_eV * x), zorder = 1)
+secxax = ax.secondary_xaxis('top', functions = (lambda x: x / (2 * np.pi * Hz_to_eV), lambda x: 2 * np.pi * Hz_to_eV * x), zorder = 1.5)
 secxax.tick_params(which = 'both', direction = 'in')
 secxax.xaxis.set_major_formatter(CustomTicker())
 secxax.set_xlabel(r'$f_a$\,[Hz]')
-secyax = ax.secondary_yaxis('right')
+secyax = ax.secondary_yaxis('right', zorder = 1.5)
 secyax.tick_params(which = 'both', direction = 'in')
 plt.setp(secyax.get_yticklabels(), visible = False)
 
@@ -70,17 +70,14 @@ ax.fill_between(2 * np.pi * Hz_to_eV * supermag[0], supermag[1], ylim2, color = 
 ax.plot(2 * np.pi * Hz_to_eV * supermag[0], supermag[1], color = '0.66', zorder = 1)
 ax.text(1.7e-17, 5e-5, 'SuperMAG', ha = 'center', va = 'center')
 
-colors = [(0.317647, 0.654902, 0.752941), (1., 0.721569, 0.219608), (0.921569, 0.494118, 0.431373), (0.705882, 0.494118, 0.545098)]
-ax.fill_between(masses, 8e-10 * np.sqrt(masses), 8e-9 * np.sqrt(masses), color = colors[3], alpha = 0.5)
-ax.text(6e-15, 1.5e-16, 'ALP Cogenesis', rotation = 180 / np.pi * np.arctan(0.5 * np.log(xlim2 / xlim1) / np.log(ylim2 / ylim1)), ha = 'center', va = 'center')
-
+colors = [(0.317647, 0.654902, 0.752941), (1., 0.721569, 0.219608), (0.921569, 0.494118, 0.431373)]
 BDM = lambda mu: const * np.sqrt(2 * hbar * c * rhoDM) * mu0 * mu / L ** 2 / GeV_to_J # in T * GeV
 Tcoh = lambda mass: np.minimum(Tint, c ** 2 / vDM ** 2 * 2 * np.pi * Hz_to_eV / mass) # in s
 ax.plot(masses, np.sqrt(6 * SNR) / BDM(existing.mu) / (np.sum(np.real(np.linalg.eigvals(existing.Stot(masses / Hz_to_eV))) ** -2, axis = 1) * Tcoh(masses) * Tint) ** 0.25, color = colors[0], label = r'Existing')
 ax.plot(masses, np.sqrt(6 * SNR) / BDM(future.mu) / (np.sum(np.real(np.linalg.eigvals(future.Stot(masses / Hz_to_eV))) ** -2, axis = 1) * Tcoh(masses) * Tint) ** 0.25, color = colors[1], label = r'Future')
 ax.plot(masses, np.sqrt(6 * SNR) / BDM(freefall.mu) / (np.sum(np.real(np.linalg.eigvals(freefall.Stot(masses / Hz_to_eV))) ** -2, axis = 1) * Tcoh(masses) * Tint) ** 0.25, color = colors[2], label = r'Freefall')
 
-ax.text(4e-13, 7e-17, 'Axion-Photon', ha = 'center', va = 'center', fontsize = 16, bbox = dict(boxstyle = 'round', facecolor = 'white', alpha = 0.5))
+ax.text(4e-13, 6.5e-14, 'Axion-Photon', ha = 'center', va = 'center', fontsize = 16, bbox = dict(boxstyle = 'round', facecolor = 'white', alpha = 0.5))
 #ax.legend(loc = 'lower left')
 
 fig.tight_layout()

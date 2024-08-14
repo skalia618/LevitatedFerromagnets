@@ -41,11 +41,11 @@ ax.set_ylabel(r'$\varepsilon$')
 ax.yaxis.set_major_formatter(CustomTicker())
 
 ax.tick_params(which = 'both', direction = 'in')
-secxax = ax.secondary_xaxis('top', functions = (lambda x: x / (2 * np.pi * Hz_to_eV), lambda x: 2 * np.pi * Hz_to_eV * x), zorder = 1)
+secxax = ax.secondary_xaxis('top', functions = (lambda x: x / (2 * np.pi * Hz_to_eV), lambda x: 2 * np.pi * Hz_to_eV * x), zorder = 1.5)
 secxax.tick_params(which = 'both', direction = 'in')
 secxax.xaxis.set_major_formatter(CustomTicker())
 secxax.set_xlabel(r"$f_{A'}$\,[Hz]")
-secyax = ax.secondary_yaxis('right')
+secyax = ax.secondary_yaxis('right', zorder = 1.5)
 secyax.tick_params(which = 'both', direction = 'in')
 plt.setp(secyax.get_yticklabels(), visible = False)
 
