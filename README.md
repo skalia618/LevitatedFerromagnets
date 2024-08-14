@@ -11,3 +11,5 @@ The files in this repository generate the following figures.
 - sensitivity.py: All plots of Fig. 5
 
 In addition, params.py is used by the projection and sensitivity codes to compute quantities for the different setups specified in Table 1.
+
+The *_constraints/ folders contain constraints used in plotting the projections.

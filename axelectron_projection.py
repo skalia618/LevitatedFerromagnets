@@ -57,10 +57,10 @@ ax.text(2e-17, 3.5e-12, 'XENONnT', ha = 'center', va = 'center')
 ax.fill_between(masses, 7.5e-9, 1, color = '0.84', zorder = 0.9)
 ax.axhline(7.5e-9, color = '0.69', zorder = 0.9)
 ax.text(1.4e-17, 1.4e-8, 'Torsion', ha = 'center', va = 'center')
-comag = np.loadtxt('axelectron_constraints/comag.txt').T
-ax.fill_between(comag[0], comag[1], 1, color = '0.81', zorder = 1)
-ax.plot(comag[0], comag[1], color = '0.66', zorder = 1)
-ax.text(3e-15, 8e-8, r'Comagnetometers', ha = 'center', va = 'center')
+comag = np.loadtxt('axelectron_constraints/comag_lee.txt').T
+ax.fill_between(1e-15 * comag[0], 0.384 * comag[1], 1, color = '0.81', zorder = 1)
+ax.plot(1e-15 * comag[0], 0.384 * comag[1], color = '0.66', zorder = 1)
+ax.text(1.5e-15, 1e-8, r'Comagnetometers', ha = 'center', va = 'center')
 
 colors = [(0.317647, 0.654902, 0.752941), (1., 0.721569, 0.219608), (0.921569, 0.494118, 0.431373)]
 BDM = 2 * np.sqrt(hbar * c) / ge / qe * vDM / c ** 2 * np.sqrt(2 * rhoDM)
