@@ -8,6 +8,7 @@ The files in this repository generate the following figures.
 - DPDM_projection.py: Top right plot of Fig. 6
 - eigenvals.py: Left plots of Figs. 1 and 2
 - elements.py: Right plots of Figs. 1 and 2
+- pickupcoil.py: Fig. 3 (the figure in the paper is a slightly cropped version)
 - sensitivity.py: All plots of Fig. 5
 
 In addition, params.py is used by the projection and sensitivity codes to compute quantities for the different setups specified in Table 1.
