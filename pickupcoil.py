@@ -33,8 +33,8 @@ ax.plot_surface(XS, YS, -1. + 0 * XS, color = '0.9')
 
 ax.add_artist(Arrow3D([0., 0.], [0., 0.], [0., -1.], mutation_scale = 10., lw = 0.8, arrowstyle='<|-|>', color = 'black'))
 ax.text(-0.09, 0., -0.5, r'$z_0$', color = 'black', ha = 'center', va = 'center', size = 'medium')
-ax.add_artist(Arrow3D([0., -1.], [0., 0.], [0., 0.], mutation_scale = 10., lw = 0.8, arrowstyle='<|-|>', color = 'black'))
-ax.text(-0.5, 0., -0.1, r'$R_{p,\theta}$', color = 'black', ha = 'center', va = 'center', size = 'medium')
+ax.add_artist(Arrow3D([0., -1. / np.sqrt(2)], [0., -1. / np.sqrt(2)], [0., 0.], mutation_scale = 10., lw = 0.8, arrowstyle='<|-|>', color = 'black'))
+ax.text(-0.4 / np.sqrt(2), -0.4 / np.sqrt(2), 0.06, r'$R_{p,\theta}$', color = 'black', ha = 'center', va = 'center', size = 'medium')
 ax.add_artist(Arrow3D([0., 0.7 / np.sqrt(2)], [0., 0.], [0., -0.7 / np.sqrt(2)], mutation_scale = 10., lw = 0.8, arrowstyle='<|-|>', color = 'black'))
 ax.text(0.28, 0., -0.43, r'$R_{p,\phi}$', color = 'black', ha = 'center', va = 'center', size = 'medium')
 
