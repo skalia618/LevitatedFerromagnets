@@ -68,11 +68,11 @@ ax.text(2e-13, 2e-2, r'AMAILS', ha = 'center', va = 'center')
 snipehunt = np.loadtxt('DPDM_constraints/snipehunt_DPDM.txt').T
 ax.fill_between(2 * np.pi * Hz_to_eV * snipehunt[0], snipehunt[1], 1, color = '0.81', zorder = 1)
 ax.plot(2 * np.pi * Hz_to_eV * snipehunt[0], snipehunt[1], color = '0.66', zorder = 1)
-ax.text(7e-15, 8e-5, 'SNIPE\nHunt', ha = 'center', va = 'center')
+ax.text(9e-15, 1e-4, 'SNIPE\nHunt', ha = 'center', va = 'center')
 supermag = np.loadtxt('DPDM_constraints/supermag_DPDM.txt').T
 ax.fill_between(2 * np.pi * Hz_to_eV * supermag[0], supermag[1], 1, color = '0.81', zorder = 1)
 ax.plot(2 * np.pi * Hz_to_eV * supermag[0], supermag[1], color = '0.66', zorder = 1)
-ax.text(1.7e-17, 4e-3, 'SuperMAG', ha = 'center', va = 'center')
+ax.text(3e-16, 4e-4, 'SuperMAG', ha = 'center', va = 'center')
 
 colors = [(0.317647, 0.654902, 0.752941), (1., 0.721569, 0.219608), (0.921569, 0.494118, 0.431373)]
 masses = np.logspace(np.log10(xlim1), np.log10(xlim2), 1000)

@@ -64,11 +64,11 @@ ax.text(1.8e-12, 1.8e-10, r'CAST', ha = 'center', va = 'center')
 snipehunt = np.loadtxt('axphoton_constraints/snipehunt_axion.txt').T
 ax.fill_between(2 * np.pi * Hz_to_eV * snipehunt[0], snipehunt[1], ylim2, color = '0.81', zorder = 1)
 ax.plot(2 * np.pi * Hz_to_eV * snipehunt[0], snipehunt[1], color = '0.66', zorder = 1)
-ax.text(7e-15, 5e-5, 'SNIPE\nHunt', ha = 'center', va = 'center')
+ax.text(9e-15, 5e-5, 'SNIPE\nHunt', ha = 'center', va = 'center')
 supermag = np.loadtxt('axphoton_constraints/supermag_axion.txt').T
 ax.fill_between(2 * np.pi * Hz_to_eV * supermag[0], supermag[1], ylim2, color = '0.81', zorder = 1)
 ax.plot(2 * np.pi * Hz_to_eV * supermag[0], supermag[1], color = '0.66', zorder = 1)
-ax.text(1.7e-17, 5e-5, 'SuperMAG', ha = 'center', va = 'center')
+ax.text(1e-16, 3e-8, 'SuperMAG', ha = 'center', va = 'center')
 
 colors = [(0.317647, 0.654902, 0.752941), (1., 0.721569, 0.219608), (0.921569, 0.494118, 0.431373)]
 BDM = lambda mu: const * np.sqrt(2 * hbar * c * rhoDM) * mu0 * mu / L ** 2 / GeV_to_J # in T * GeV
@@ -78,7 +78,7 @@ ax.plot(masses, np.sqrt(6 * SNR) / BDM(future.mu) / (np.sum(np.real(np.linalg.ei
 ax.plot(masses, np.sqrt(6 * SNR) / BDM(freefall.mu) / (np.sum(np.real(np.linalg.eigvals(freefall.Stot(masses / Hz_to_eV))) ** -2, axis = 1) * Tcoh(masses) * Tint) ** 0.25, color = colors[2], label = r'Freefall')
 
 ax.text(4e-13, 6.5e-14, 'Axion-Photon', ha = 'center', va = 'center', fontsize = 16, bbox = dict(boxstyle = 'round', facecolor = 'white', alpha = 0.5))
-#ax.legend(loc = 'lower left')
+#ax.legend(loc = 'lower right', ncols = 3)
 
 fig.tight_layout()
 #fig.show()
